@@ -4,6 +4,15 @@
 
 @use "variables" as v;
 
+// =====================================================================
+//  Publication entry layout — TWEAK THESE VARIABLES TO TASTE
+// =====================================================================
+$pub-thumbnail-width: 9rem; // width of the left column (venue badge + thumbnail)
+$pub-entry-gap: 1.25rem; // horizontal gap between the left column and the text
+$pub-author-venue-gap: 0.7rem; // vertical space between the author line and the venue
+$pub-author-self-color: v.$blue-color; // color used to highlight your own name
+// =====================================================================
+
 .publications {
   margin-top: 2rem;
 
@@ -39,12 +48,37 @@
     li {
       margin-bottom: 1rem;
 
+      // Layout: fixed-width left column (venue + thumbnail), text fills the rest
+      // so every entry's right edge lines up with the year divider.
+      .bib-entry {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: $pub-entry-gap;
+      }
+
+      .bib-content {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
       .preview {
-        display: inline-block;
+        display: block;
+        width: 100%;
+        height: auto;
       }
 
       .abbr {
+        flex: 0 0 $pub-thumbnail-width;
+        max-width: $pub-thumbnail-width;
         margin-bottom: 0.5rem;
+
+        figure,
+        picture {
+          display: block;
+          width: 100%;
+          margin: 0;
+        }
 
         abbr {
           display: inline-block;
@@ -72,6 +106,8 @@
       }
 
       .author {
+        margin-bottom: $pub-author-venue-gap;
+
         a {
           border-bottom: 1px dashed var(--global-theme-color);
 
@@ -82,8 +118,9 @@
         }
 
         > em {
-          border-bottom: 1px solid;
+          color: $pub-author-self-color;
           font-style: normal;
+          font-weight: 600;
         }
 
         > span.more-authors {
@@ -180,6 +217,26 @@
       border-color: var(--global-highlight-color);
     }
   }
+}
+
+@media (max-width: 575.98px) {
+  .publications ol.bibliography li {
+    .bib-entry {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .abbr {
+      flex-basis: auto;
+      max-width: 12rem;
+    }
+  }
+}
+
+.equal-contrib-note {
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.5rem;
 }
 
 .citation,

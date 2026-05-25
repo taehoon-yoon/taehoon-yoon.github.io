@@ -90,6 +90,95 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// =====================================================================
+//  About header layout — TWEAK THESE VARIABLES TO TASTE
+// =====================================================================
+$about-social-icon-size: 1.8rem; // size of each social link icon
+$about-social-gap: 2.5rem; // horizontal spacing between social links
+$about-info-reserve: 2.75rem; // space reserved under the image for the info text (desktop)
+// =====================================================================
+
+// Bio + social sit in one column, the profile image in the other.
+// The image alone defines the row height (the info text below it is taken out
+// of flow), so the social icons anchor to the bottom of the image and stay
+// horizontally centered in their column.
+.about-header {
+  display: flex;
+  align-items: stretch;
+
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+
+    .social {
+      margin-top: auto;
+      text-align: center;
+
+      .contact-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+        gap: $about-social-gap;
+        font-size: $about-social-icon-size;
+
+        a {
+          img,
+          svg {
+            width: $about-social-icon-size;
+            height: $about-social-icon-size;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .profile {
+    flex: 0 0 auto;
+  }
+}
+
+.about-header.about-header-left {
+  flex-direction: row-reverse;
+}
+
+@media (min-width: 576px) {
+  .about-header {
+    margin-bottom: $about-info-reserve;
+
+    // image defines the row height; the info text hangs below it, out of flow
+    .profile {
+      align-self: flex-start;
+      position: relative;
+    }
+
+    .more-info {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .about-header,
+  .about-header.about-header-left {
+    flex-direction: column;
+
+    .profile {
+      order: -1;
+    }
+
+    .about-intro .social {
+      margin-top: 1rem;
+    }
+  }
+}
+
 // CV
 
 .cv {
