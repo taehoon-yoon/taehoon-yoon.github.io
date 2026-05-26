@@ -179,6 +179,122 @@ $about-info-reserve: 2.75rem; // space reserved under the image for the info tex
   }
 }
 
+// =====================================================================
+//  Homepage "Publications" heading — TWEAK THIS VARIABLE TO TASTE
+// =====================================================================
+$pub-section-gap: 4rem; // space above the Publications heading (gap below the intro/bio)
+// =====================================================================
+
+// Sits above the Publications heading to separate it from the intro/bio.
+.pub-heading {
+  margin-top: $pub-section-gap;
+}
+
+// =====================================================================
+//  Education section (homepage) — TWEAK THESE VARIABLES TO TASTE
+// =====================================================================
+$edu-logo-size: 3.75rem; // square slot reserved for each school emblem
+$edu-gap: 1.5rem; // horizontal space between the emblem and the text
+$edu-item-gap: 1.75rem; // vertical space between entries
+$edu-section-gap: 4.5rem; // space above the heading (separates Publications from Education)
+// =====================================================================
+
+// Sits above the Education heading to set it apart from the Publications list.
+.edu-heading {
+  margin-top: $edu-section-gap;
+}
+
+.education {
+  margin-top: 1.5rem;
+
+  .edu-item {
+    display: flex;
+    align-items: center;
+    gap: $edu-gap;
+
+    // A single thin rule under the heading (above the first entry only),
+    // matching the Publications year separators. No rule between schools.
+    &:first-child {
+      padding-top: $edu-item-gap;
+      border-top: 1px solid var(--global-divider-color);
+    }
+
+    & + .edu-item {
+      margin-top: $edu-item-gap;
+    }
+  }
+
+  // Fixed square slot keeps the left edge of every text block aligned,
+  // regardless of whether the emblem is a wide wordmark or a tall crest.
+  .edu-logo {
+    flex: 0 0 $edu-logo-size;
+    width: $edu-logo-size;
+    height: $edu-logo-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .edu-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .edu-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .edu-school {
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .edu-date {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 1.1rem;
+    color: var(--global-text-color-light);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .edu-degree {
+    margin-top: 0.15rem;
+    font-size: 0.95rem;
+  }
+
+  .edu-aux {
+    margin-top: 0.1rem;
+    font-size: 0.95rem;
+    color: var(--global-text-color-light);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .education {
+    .edu-logo {
+      flex-basis: 3rem;
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .edu-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.1rem;
+    }
+  }
+}
+
 // CV
 
 .cv {

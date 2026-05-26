@@ -67,31 +67,63 @@ layout: default
 
     <!-- News (temporarily hidden) -->
     {% comment %}
-    {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
+      {% if page.announcements and page.announcements.enabled %}
+        <h2>
+          <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        </h2>
+        {% include news.liquid limit=true %}
+      {% endif %}
     {% endcomment %}
 
     <!-- Latest posts (temporarily hidden) -->
     {% comment %}
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
+      {% if page.latest_posts and page.latest_posts.enabled %}
+        <h2>
+          <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        </h2>
+        {% include latest_posts.liquid %}
+      {% endif %}
     {% endcomment %}
 
     <!-- Publications -->
     {% if page.selected_papers %}
-      <h2>
+      <h2 class="pub-heading">
         <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Publications</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
+
+    <!-- Education -->
+    <h2 class="edu-heading">Education</h2>
+    <div class="education">
+      <div class="edu-item">
+        <div class="edu-logo">
+          <img src="{{ '/assets/img/school/kaist.png' | relative_url }}" alt="KAIST" loading="lazy">
+        </div>
+        <div class="edu-body">
+          <div class="edu-head">
+            <span class="edu-school">Korea Advanced Institute of Science and Technology (KAIST)</span>
+            <span class="edu-date">2024 &ndash; 2026</span>
+          </div>
+          <div class="edu-degree">M.S. in Artificial Intelligence</div>
+          <div class="edu-aux">Advised by <a href="https://mhsung.github.io/">Minhyuk Sung</a></div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-logo">
+          <img src="{{ '/assets/img/school/sogang.png' | relative_url }}" alt="Sogang University" loading="lazy">
+        </div>
+        <div class="edu-body">
+          <div class="edu-head">
+            <span class="edu-school">Sogang University</span>
+            <span class="edu-date">2017 &ndash; 2024</span>
+          </div>
+          <div class="edu-degree">B.S. in Physics &middot; B.S. in Computer Science and Engineering</div>
+          <div class="edu-aux">Valedictorian, College of Natural Sciences</div>
+        </div>
+      </div>
+    </div>
 
     <!-- Social moved into the about-header intro column (see above) -->
 
