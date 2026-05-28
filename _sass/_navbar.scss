@@ -67,6 +67,25 @@
     }
   }
 
+  // =====================================================================
+  //  Navbar "About" image — TWEAK THIS VARIABLE TO TASTE
+  // =====================================================================
+  $nav-about-img-height: 2.0rem; // height of the image used in place of the About text
+  // =====================================================================
+
+  .navbar-nav .nav-item .nav-about {
+    display: inline-flex;
+    align-items: center;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    .nav-about-img {
+      height: $nav-about-img-height;
+      width: auto;
+      display: block;
+    }
+  }
+
   .navbar-nav .nav-item.active > .nav-link {
     background-color: inherit;
     font-weight: bolder;
