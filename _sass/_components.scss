@@ -188,6 +188,7 @@ $pub-section-gap: 4rem; // space above the Publications heading (gap below the i
 // Sits above the Publications heading to separate it from the intro/bio.
 .pub-heading {
   margin-top: $pub-section-gap;
+  font-variant-caps: small-caps;
 }
 
 // =====================================================================
@@ -202,6 +203,7 @@ $edu-section-gap: 4.5rem; // space above the heading (separates Publications fro
 // Sits above the Education heading to set it apart from the Publications list.
 .edu-heading {
   margin-top: $edu-section-gap;
+  font-variant-caps: small-caps;
 }
 
 .education {
