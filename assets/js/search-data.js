@@ -518,14 +518,14 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%74%61%65%68%6F%6F%6E@%6B%61%69%73%74.%61%63.%6B%72", "_blank");
+          window.open("mailto:%74%68%79%6F%6F%6E@%75%6D%69%63%68.%65%64%75", "_blank");
         },
       },{
-        id: 'social-github',
-        title: 'GitHub',
+        id: 'social-semanticscholar',
+        title: 'Semantic Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://github.com/taehoon-yoon", "_blank");
+          window.open("https://www.semanticscholar.org/author/Taehoon-Yoon/2328014454", "_blank");
         },
       },{
         id: 'social-scholar',
@@ -533,6 +533,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://scholar.google.com/citations?user=LOJKOWcAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/taehoon-yoon", "_blank");
         },
       },{
       id: 'light-theme',
