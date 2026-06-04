@@ -23,7 +23,7 @@ layout: default
           <!-- Social (sits below the bio, aligned with the bottom of the image) -->
           {% if page.social %}
             <div class="social">
-              <div class="contact-icons">{% social_links %}</div>
+              <div class="contact-icons">{% include contact-social-links.liquid %}</div>
 
               <!-- contact-note hidden -->
               {% comment %}
@@ -60,7 +60,7 @@ layout: default
       <!-- Social -->
       {% if page.social %}
         <div class="social">
-          <div class="contact-icons">{% social_links %}</div>
+          <div class="contact-icons">{% include contact-social-links.liquid %}</div>
         </div>
       {% endif %}
     {% endif %}
