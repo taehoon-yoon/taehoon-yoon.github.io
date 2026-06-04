@@ -61,7 +61,7 @@ ul.task-list input[type="checkbox"] {
   .more-info {
     margin-bottom: 5px;
     margin-top: 5px;
-    font-family: monospace;
+    // font-weight: bold;
 
     p {
       display: inline-block;
@@ -96,6 +96,7 @@ ul.task-list input[type="checkbox"] {
 $about-social-icon-size: 1.8rem; // size of each social link icon
 $about-social-gap: 2.5rem; // horizontal spacing between social links
 $about-info-reserve: 2.75rem; // space reserved under the image for the info text (desktop)
+$about-bio-font-size: 1.15rem; // font size of the subtitle + bio paragraphs (homepage only)
 // =====================================================================
 
 // Bio + social sit in one column, the profile image in the other.
@@ -177,6 +178,13 @@ $about-info-reserve: 2.75rem; // space reserved under the image for the info tex
       margin-top: 1rem;
     }
   }
+}
+
+// Subtitle (.desc) and bio paragraphs on the homepage — both selectors are
+// unique to the about layout, so this won't leak to other pages.
+.post-header .desc,
+.about-intro .clearfix {
+  font-size: $about-bio-font-size;
 }
 
 // =====================================================================
