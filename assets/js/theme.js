@@ -261,12 +261,11 @@ let transTheme = () => {
 
 // Determine the expected state of the theme toggle: "dark" or "light".
 // On first visit (or any unrecognized value, e.g. a legacy "system" entry),
-// fall back to the user's OS color-scheme preference.
+// always default to dark regardless of the OS / browser color-scheme preference.
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
   if (themeSetting !== "dark" && themeSetting !== "light") {
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    themeSetting = prefersDark ? "dark" : "light";
+    themeSetting = "dark";
   }
   return themeSetting;
 };
